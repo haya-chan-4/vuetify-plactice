@@ -38,6 +38,7 @@
 export default {
   data() {
     return {
+      drawer: null,
       nav_lists:[
           {
             name: 'Getting Started',

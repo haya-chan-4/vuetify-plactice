@@ -1,6 +1,6 @@
 <template>
   <v-app-bar color="primary" clipped-left dark app>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="toggle"></v-app-bar-nav-icon>
       <v-toolbar-title>Vuetify</v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -60,6 +60,11 @@ export default {
             link:'/stack-overview'
           },
         ],
+    }
+  },
+  methods: {
+    toggle() {
+      this.$store.dispatch('drawer')
     }
   }
 }
