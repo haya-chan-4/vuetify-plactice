@@ -4,11 +4,13 @@
       <v-toolbar-title>Vuetify</v-toolbar-title>
       <v-spacer></v-spacer>
 
+
       <v-toolbar-items>
         <v-btn text to="/">Home</v-btn>
         <v-btn text to="/Login">Login</v-btn>
         <v-btn text to="/about">About</v-btn>
-        <v-btn text to="/enterprise">For Enterprise</v-btn>
+        <v-btn text to="/grid">Grid</v-btn>
+        <v-btn text to="/salegraph">SaleGraph</v-btn>
         <v-menu offset-y>
           <template v-slot:activator="{on}">
           <v-btn v-on="on" text>Support<v-icon>mdi-menu-down</v-icon></v-btn>
@@ -64,7 +66,8 @@ export default {
   },
   methods: {
     toggle() {
-      this.$store.dispatch('drawer')
+      this.drawer = !this.drawer
+      this.$emit('toggle', this.drawer)
     }
   }
 }

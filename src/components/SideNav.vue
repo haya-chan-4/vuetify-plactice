@@ -1,10 +1,11 @@
 <template>
-  <v-navigation-drawer v-model="drawer" color="#eefe" clipped app>
+  <v-navigation-drawer color="#eefe" clipped app>
       <v-container>
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title class="title grey--text text--darken-2">
-              Navigation lists
+              {{message}}
+              {{drawer}}
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -35,10 +36,26 @@
 </template>
 
 <script>
+
+
 export default {
+  components: {
+
+  },
+
+  props: {
+    drawer: {
+      type: String,
+      required: null,
+    },
+    message: {
+      type: String
+    }
+  },
+
   data() {
     return {
-      drawer: null,
+      // drawer: null,
       nav_lists:[
           {
             name: 'Getting Started',
@@ -69,6 +86,9 @@ export default {
           },
         ]
     }
+  },
+  methods: {
+
   }
 }
 </script>

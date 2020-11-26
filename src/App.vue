@@ -1,13 +1,14 @@
 <template>
   <v-app>
-    <SideNav />
-    <Header />
+    <SideNav message="Navigation Lists" />
+    <Header @toggle="open" />
 
     <v-main>
-      <router-view />
+      <router-view  />
     </v-main>
 
     <Footer />
+
   </v-app>
 </template>
 
@@ -26,12 +27,20 @@ export default {
     Footer
   },
 
+  // props: ['drawer'],
+
   data(){
     return{
-      data(){
-        return {
-          drawer: null,
-        }
+      // drawer: null,
+    }
+  },
+  methods: {
+    open(drawer) {
+      console.log(drawer)
+      console.log('受け取りました')
+
+      if(drawer) {
+        console.log(drawer)
       }
     }
   }
